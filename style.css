@@ -1,0 +1,127 @@
+html { box-sizing: border-box; }
+@charset "utf-8";
+*, *:before, *:after { box-sizing: inherit; }
+body {
+	font-family: sans-serif;
+	font-size: 18px;
+	color: white;
+    padding: 0;
+    margin: 0;
+}
+div#background {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+div.centerWrapper {
+	transform: translateY(-50%);
+	position: absolute;
+	width: 45%;
+	left: 30%;
+	top: 50%;
+}
+.centerWrapper { background-color: rgba(0,0,0,0.4); padding: 10px; }
+div.timeDate {
+	font-size: x-large;
+	padding: 0 15px 1rem;
+	text-align: left;
+	width: 50%
+}
+div.weather {
+	font-size: x-large;
+	padding: 0 15px 1rem;
+	text-align: right;
+	width: 50%
+}
+div.weather a {
+	color: inherit;
+	display: inline;
+	padding: 0;
+}
+div.weather a:hover {
+	text-decoration: underline;
+}
+div.weather a:after {
+	transition: none;
+	content: none;
+}
+div.weather a:hover:after {
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+ul.subMenu {
+	display: none;
+	width: 100%;
+}
+a {
+	transition: all 0.15s;
+	text-decoration: none;
+	/*display: block;*/
+	outline: none;
+	/*padding: 15px;*/
+	color: white;
+}
+a:after {
+	transition: all .15s;
+	content: "→";
+	opacity: 0;
+}
+a:hover:after, a.active:after {
+	padding-left: 6px;
+	opacity: 1;
+}
+a.parent:after        { content: "↓"; }
+a.parent.active:after { content: "↑"; }
+p {
+	padding: 15px;
+	margin: 0;
+}
+
+/* Fix links within text */
+p a {
+	text-decoration: underline;
+}
+
+/*.clear { clear: both; }*/
+.left  { float: left; }
+.right { float: right; }
+div.right, div.left { width: 50%; }
+.no-transform { text-transform: none; }
+.lowercase { text-transform: lowercase; }
+ul.box li a { background-color: rgba(10, 10, 10, 0.8); }
+ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(10, 10, 10, 0.9); }
+.fadeIn { animation: fadeIn 0.4s 0.4s both ease-in; }
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+.searchbox {
+	font-family: sans-serif;
+    color: #999;
+    font-weight: 400;
+    font-size: 100%;
+    background-color: rgba(10, 10, 10, 0.4);
+    padding: 15px;
+    display: block;
+    border: none;
+    text-align: left;
+	width: 100%;
+}
+.searchbox:focus {
+    outline: none;
+}
+li {
+    display: none;
+}
+
+/* Greeting */
+#message {
+	text-align: center;
+	color: white;
+}
+
